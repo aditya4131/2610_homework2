@@ -27,15 +27,11 @@
       var newLeft = oldLeft + 20;
       console.log("new Left : " + newLeft);
       var newLeft = oldLeft + 20;
-
-      if (newLeft > screenWidth) {
-        oldLeft = "0px";
-        newLeft = "0px";
-        img.style.left = "0px";
-        window.clearTimeout(clearTimer);
-      }
-
       img.style.left = newLeft + "px";
+
+      if (oldLeft > window.innerWidth - img.width) {
+        img.style.left = "0px";
+      }
     }
     var clearTimer = window.setInterval(catRight, 100);
   </script>

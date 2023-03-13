@@ -19,6 +19,15 @@
       var movePixels = 10;
       var delayMs = 50;
       var catTimer = null;
+      var startButton = document
+        .getElementById("start-button")
+        .addEventListener("click", startRunning);
+      var speedButton = document
+        .getElementById("speed-button")
+        .addEventListener("click", runFaster);
+      var stopButton = document
+        .getElementById("stop-button")
+        .addEventListener("click", stopRunning);
       function motorCycleRunning() {
         var img = document.getElementsByTagName("img")[0];
         var currentLeft = parseInt(img.style.left);
@@ -29,6 +38,15 @@
       }
       function startRunning() {
         catTimer = window.setInterval(motorCycleRunning, delayMs);
+        movePixels = 10;
+      }
+      function runFaster() {
+        movePixels = 25;
+        catTimer = window.setInterval(motorCycleRunning, delayMs);
+      }
+      function stopRunning() {
+        movePixels = undefined;
+        catTimer = window.clearInterval(motorCycleRunning, delayMs);
       }
     </script>
   </body>
