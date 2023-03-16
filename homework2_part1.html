@@ -39,14 +39,17 @@
       function startRunning() {
         catTimer = window.setInterval(motorCycleRunning, delayMs);
         movePixels = 10;
+        
       }
       function runFaster() {
         movePixels = 25;
         catTimer = window.setInterval(motorCycleRunning, delayMs);
+        
       }
       function stopRunning() {
         movePixels = undefined;
         catTimer = window.clearInterval(motorCycleRunning, delayMs);
+        
       }
     </script>
   </body>

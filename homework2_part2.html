@@ -39,14 +39,23 @@
       function startRunning() {
         catTimer = window.setInterval(motorCycleRunning, delayMs);
         movePixels = 10;
+        document.getElementById("start-button").disabled = true;
+        document.getElementById("speed-button").disabled = false;
+        document.getElementById("stop-button").disabled = false;
       }
       function runFaster() {
         movePixels = 25;
         catTimer = window.setInterval(motorCycleRunning, delayMs);
+        document.getElementById("speed-button").disabled = true;
+        document.getElementById("start-button").disabled = false;
+        document.getElementById("stop-button").disabled = false;
       }
       function stopRunning() {
         movePixels = undefined;
         catTimer = window.clearInterval(motorCycleRunning, delayMs);
+        document.getElementById("stop-button").disabled = true;
+        document.getElementById("start-button").disabled = false;
+        document.getElementById("speed-button").disabled = false;
       }
     </script>
   </body>
